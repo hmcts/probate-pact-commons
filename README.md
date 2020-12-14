@@ -79,7 +79,7 @@ Follow the steps below to tag a branch once the code review has completed.
 #### Updating master tag
 
 Perform the necessary validation steps to merge the code to master. Ensure the branch build succeeds, tagging in git though shows up as errors in travis-ci.
-https://travis-ci.org/hmcts/probate-commons/
+https://travis-ci.org/hmcts/probate-pact-commons/
 
 Once the JIRA has been merged follow the steps below to tag master. 
 - Locally get latest of master.
