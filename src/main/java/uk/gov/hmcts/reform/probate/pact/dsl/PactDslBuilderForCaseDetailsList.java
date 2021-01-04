@@ -432,6 +432,19 @@ public final class PactDslBuilderForCaseDetailsList {
         }).build();
     }
 
+    public static DslPart buildCaseResourcesDsl(Long caseId, boolean withExecutors,
+                                                boolean isWelsh) {
+        return newJsonBody((o) -> {
+            o.stringType("id", caseId.toString())
+                .stringType("jurisdiction", "PROBATE")
+                .stringMatcher("state", "CaseCreated|Pending", "CaseCreated")
+                .stringType("security_classification", "PUBLIC")
+                .object("data", (dataMap) -> {
+                    getCaseData(withExecutors, isWelsh, dataMap);
+                });
+        }).build();
+    }
+
     public static DslPart buildSearchResultDsl(Long caseId, String emailAddress,
                                                boolean withExecutors, boolean isWelsh, boolean withPayments) {
         return newJsonBody((o) -> {
