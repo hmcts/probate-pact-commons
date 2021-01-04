@@ -435,7 +435,7 @@ public final class PactDslBuilderForCaseDetailsList {
     public static DslPart buildCaseResourcesDsl(Long caseId, boolean withExecutors,
                                                 boolean isWelsh) {
         return newJsonBody((o) -> {
-            o.numberType("id", caseId)
+            o.stringType("id", caseId.toString())
                 .stringType("jurisdiction", "PROBATE")
                 .stringMatcher("state", "CaseCreated|Pending", "CaseCreated")
                 .stringType("security_classification", "PUBLIC")
